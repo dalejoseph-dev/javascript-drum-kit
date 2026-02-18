@@ -6,15 +6,15 @@ function playSound(e) {
   audio.currentTime = 0; // Rewind to the start
   audio.play();
   console.log(key);
-  key.classList.add('playing');
+  key.classList.add("playing");
 }
 
 function removeTransition(e) {
-  if (e.propertyName !== 'transform') return; // skip it if it's not a transform
+  if (e.propertyName !== "transform") return; // skip it if it's not a transform
   console.log(e.propertyName);
-  this.classList.remove('playing');
+  this.classList.remove("playing");
 }
 
-const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-window.addEventListener('keydown', playSound);
+const keys = document.querySelectorAll(".key");
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
+window.addEventListener("keydown", playSound);
